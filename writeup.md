@@ -14,9 +14,8 @@ The goals / steps of this project are the following:
 
 
 [//]: # (Image References)
-
-[image1]: ./examples/grayscale.jpg "Grayscale"
-
+[image1]: ./test_images_output/before_extrapolation/solidWhiteRight.jpg "End Result without Extrapolation"
+[image2]: ./test_images_output/solidWhiteRight.jpg "End Result with Extrapolation"
 ---
 
 ### Reflection
@@ -34,10 +33,10 @@ then by removing the outliers based on a calculation of the mean and standard de
 F. Combine the original image with the image containing only the lines.
 
 Here is an example before modifying draw_lines()
-[image1]: ./test_images_output/before_extrapolation/solidWhiteRight.jpg "End Result without Extrapolation"
+![alt text][image1]
 
 Here is after modifying draw_lines() to extrapolate the lines.
-[image2]: ./test_images_output/solidWhiteRight.jpg "End Result with Extrapolation"
+![alt text][image2]
 
 ### 2. Identify potential shortcomings with your current pipeline
 
