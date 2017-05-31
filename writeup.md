@@ -14,6 +14,7 @@ The goals / steps of this project are the following:
 
 
 [//]: # (Image References)
+
 [image1]: ./test_images_output/before_extrapolation/solidWhiteRight.jpg "End Result without Extrapolation"
 [image2]: ./test_images_output/solidWhiteRight.jpg "End Result with Extrapolation"
 ---
