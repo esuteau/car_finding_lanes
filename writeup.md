@@ -23,25 +23,32 @@ The goals / steps of this project are the following:
 
 ### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
 
-My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I .... 
+Here is my pipeline:
+A. Convert the image to gray scale to be able to calculate the gradients with canny edge detection
+B. Blur the image using a Gaussian filter
+C. Define a specific region of interest around the lane to remove the outside noise
+D. Detect the lines using Hough Transform. Try to extract only the longer lines corresponding to the lane limits
+E. Extrapolate left and right lines by first spliting the lines into positive and negative slopes,
+then by removing the outliers based on a calculation of the mean and standard deviation of the slopes,
+ and finally calculating an average of the start and end points for both left and right lines.
+F. Combine the original image with the image containing only the lines.
 
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
+Here is an example before modifying draw_lines()
+[image1]: ./test_images_output/before_extrapolation/solidWhiteRight.jpg "End Result without Extrapolation"
 
-If you'd like to include images to show how the pipeline works, here is how to include an image: 
-
-![alt text][image1]
-
+Here is after modifying draw_lines() to extrapolate the lines.
+[image2]: ./test_images_output/solidWhiteRight.jpg "End Result with Extrapolation"
 
 ### 2. Identify potential shortcomings with your current pipeline
 
-
-One potential shortcoming would be what would happen when ... 
-
-Another shortcoming could be ...
-
+The algorithm is highly dependent on a correct definition of the mask, to avoid detecting lines that are not the limits of the lane of consideration.
+Therefore it requires the camera to be mounted at a very specific position.
+Lane detection was done on fairly straight sections of highways. It seemed to be doing poorly my more pronounced turns...
+The draw_lines function uses a hard coded value defining the top section of the mask... This should an argument of the function.
 
 ### 3. Suggest possible improvements to your pipeline
 
-A possible improvement would be to ...
+It would be nice to find a way to detect the mask automatically without relying on a manual tuning.
+The pipeline needs to be enhanced to work on sharp turns.
+It should be also tested with different weather and light conditions.
 
-Another potential improvement could be to ...
