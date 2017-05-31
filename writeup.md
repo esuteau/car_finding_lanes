@@ -12,11 +12,6 @@ The goals / steps of this project are the following:
 * Make a pipeline that finds lane lines on the road
 * Reflect on your work in a written report
 
-
-[//]: # (Image References)
-
-[image1]: ./test_images_output/before_extrapolation/solidWhiteRight.jpg "End Result without Extrapolation"
-[image2]: ./test_images_output/solidWhiteRight.jpg "End Result with Extrapolation"
 ---
 
 ### Reflection
@@ -34,10 +29,12 @@ then by removing the outliers based on a calculation of the mean and standard de
 F. Combine the original image with the image containing only the lines.
 
 Here is an example before modifying draw_lines()
-![alt text][image1]
+
+<img src="test_images_output/before_extrapolation/solidWhiteRight.jpg" width="480" alt="End Result without Extrapolation" />
 
 Here is after modifying draw_lines() to extrapolate the lines.
-![alt text][image2]
+
+<img src="test_images_output/solidWhiteRight.jpg" width="480" alt="End Result with Extrapolation" />
 
 ### 2. Identify potential shortcomings with your current pipeline
 
